@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 
 type ComponentOnePropsType = {
@@ -15,4 +15,4 @@ export const ConnectedComponentOne = connect(
     (state) => ({
         name: state.randomState,
     }),
-);
+)(ComponentOne);

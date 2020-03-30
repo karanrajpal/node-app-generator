@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { ConnectedComponentOne } from './ComponentOne';
 import { ComponentTwo } from './ComponentTwo';
 
 // Import styles
-import '../styles/index.scss';
+import '../styles/app.scss';
 
 const App = () => (
     <Router>
