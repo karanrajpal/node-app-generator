@@ -96,7 +96,6 @@ if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = '
     esac
 fi
 
-
 printf "Got it. Setting up your node dependencies. Standby as we contact the internet...\n\n\n"
 for package in "${packages_to_install[@]}"
 do

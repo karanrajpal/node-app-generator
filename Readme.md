@@ -1,9 +1,8 @@
-# Webapp Generator
+# Node App Generator
 Ever wanted to hit the ground running with your idea?
 Tired of setting up projects from scratch just the way you like it?
 
 This webapp code generator wizard is the answer to all your project setup automation fantasies.
-
 
 This interactive script does the following:
 1. **npm init** - To create package.json
