@@ -6,5 +6,5 @@ import actionCreatorFactory from 'typescript-fsa';
  
 const actionCreator = actionCreatorFactory();
 
-export const setRandomString = actionCreator<{ randomString: string }>('SET_RANDOM_STRING');
+export const setRandomName = actionCreator<{ randomName: string }>('SET_RANDOM_NAME');
 export const setRandomBoolean = actionCreator<{ randomBoolean: boolean }>('SET_RANDOM_BOOLEAN');

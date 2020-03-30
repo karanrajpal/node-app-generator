@@ -5,21 +5,21 @@
 import {isType} from 'typescript-fsa';
 import {
     setRandomBoolean,
-    setRandomString,
+    setRandomName,
 } from './actions';
 
 
 export const initialState = {
-    randomString: '',
+    randomName: 'Astro Boy',
     randomBoolean: false,
 };
 
 // Define and export reducer
 const AppReducer = (state = initialState, action: Action) => {
-    if (isType(action, setRandomString)) {
+    if (isType(action, setRandomName)) {
         return {
             ...state,
-            randomString: action.payload.randomString,
+            randomName: action.payload.randomName,
         };
     }
     if (isType(action, setRandomBoolean)) {
