@@ -74,13 +74,15 @@ if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = '
     mkdir client
     printf "Cool. This wizard has the following client templates \n"
     printf "
-        0) Empty \n
+        0) Empty
         1) React + Redux + React Router in Typescript\n\n"
     printf "Pick the template you want to setup your client folder with [0-2]: "
     read -r confirmation
-    if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
+    case "$confirmation" in
+    "1")
         cp -r ../quick-webapp-generator/templates/react-redux-with-router/ client/
-    fi
+        ;;
+    esac
 fi
 
 
