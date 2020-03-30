@@ -22,17 +22,17 @@ npm init -y
 
 printf "Yo, do you want to setup a client folder [y/n]: "
 read -r confirmation
-if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]
-then
+if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]; then
     mkdir client
     printf "Cool. This wizard only has opinions about a React+Redux client project. Do you want it [y/n]: "
     read -r confirmation
-    if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]
-    cd client
+    if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]; then
+        cd client
         echo "Insert your main index.html content here and include index.js" > index.html
         echo "Include your App.ts file here" > index.html
-        mkdir -p client/components client/state
-        echo "This is " client/components/App.tsx
+        mkdir -p components state
+        echo "This is " > components/App.tsx
+    fi
 fi
 
 
@@ -40,30 +40,34 @@ printf "Hooray, it's now time to choose from your favorite npm packages!\n"
 packages_to_install=()
 printf "Install Build tool Parcel [y/n]: "
 read -r confirmation
-if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]
-then
+if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]; then
     packages_to_install+=('parcel')
 fi
 
 printf "Install React [y/n]: "
 read -r confirmation
-if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]
-then
+if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]; then
     packages_to_install+=('react')
+    packages_to_install+=('react-dom')
 fi
 
 printf "Install Redux [y/n]: "
 read -r confirmation
-if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]
-then
+if [ $confirmation = ''] || [ $confirmation = 'y' ] || [ $confirmation = 'Y' ]; then
     packages_to_install+=('redux')
     packages_to_install+=('react-redux')
+    packages_to_install+=('typescript-fsa')
+fi
+
+printf "Install react-router-dom [y/n]: "
+read -r confirmation
+if [ $confirmation = ''] || $confirmation = 'y' ] || [ $confirmation = 'Y' ]; then
+    packages_to_install+=('react-router-dom')
 fi
 
 printf "Install Express [y/n]: "
 read -r confirmation
-if [ $confirmation = ''] || $confirmation = 'y' ] || [ $confirmation = 'Y' ]
-then
+if [ $confirmation = ''] || $confirmation = 'y' ] || [ $confirmation = 'Y' ]; then
     packages_to_install+=('express')
 fi
 
