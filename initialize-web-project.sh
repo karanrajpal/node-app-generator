@@ -40,7 +40,6 @@ read -r confirmation
 if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
     packages_to_install+=('redux')
     packages_to_install+=('react-redux')
-    packages_to_install+=('typescript-fsa')
 fi
 
 printf "Install react-router-dom [y/n]: "
@@ -53,6 +52,12 @@ printf "Install Typescript [y/n]: "
 read -r confirmation
 if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
     packages_to_install+=('typescript')
+fi
+
+printf "Install Typescript-fsa [y/n]: "
+read -r confirmation
+if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
+    packages_to_install+=('typescript-fsa')
 fi
 
 printf "Install Sass [y/n]: "
