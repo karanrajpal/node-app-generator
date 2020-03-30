@@ -81,7 +81,7 @@ if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = '
     printf "
         0) Empty
         1) React + Redux + React Router in Typescript\n\n"
-    printf "Pick the template you want to setup your client folder with [0-2]: "
+    printf "Pick the boilerplate template you want to setup your client folder with [0-1]: "
     read -r confirmation
     case "$confirmation" in
     "1")
