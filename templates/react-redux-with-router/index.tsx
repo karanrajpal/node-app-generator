@@ -5,7 +5,7 @@
 import App from './components/App';
 
 // Import React and Redux
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -22,8 +22,8 @@ const configureStore = () => {
 const store = configureStore();
 
 render(
-    <Provider store={ store }>
+    (<Provider store={ store }>
         <App />
-    </Provider>,
-    document.getElementById('resume-app')
+    </Provider>),
+    document.getElementById('app-container')
 );
