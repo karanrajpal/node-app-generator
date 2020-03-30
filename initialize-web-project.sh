@@ -20,6 +20,12 @@ done
 mkdir $PROJECT_PATH && cd $PROJECT_PATH
 npm init -y
 
+printf "Initialize empty git repository [y/n]: "
+read -r confirmation
+if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
+    git init
+fi
+
 printf "Hooray, it's now time to choose from your favorite npm packages!\n"
 packages_to_install=()
 printf "Install Build tool Parcel [y/n]: "
