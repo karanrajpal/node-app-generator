@@ -24,6 +24,7 @@ Note: Some selections install popularly used companion libraries like `redux` in
 
 ## Boilerplate Templates
 You can choose to copy from one of the boulerplate apps to really get a kickstart on your app.
-This script currently only supports one template for client apps.
+This script currently supports the following templates for client apps.
 
 1. Client React+Redux+React Router using Typescript
+2. Client React+Redux+React Router using Typescript + Picnic SCSS

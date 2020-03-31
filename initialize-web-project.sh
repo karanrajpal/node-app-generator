@@ -86,12 +86,16 @@ if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = '
     printf "Cool. This wizard has the following client templates \n"
     printf "
         0) Empty
-        1) React + Redux + React Router in Typescript\n\n"
-    printf "Pick the boilerplate template you want to setup your client folder with [0-1]: "
+        1) React + Redux + React Router in Typescript\n
+        2) React + Redux + React Router in Typescript\n\n"
+    printf "Pick the boilerplate template you want to setup your client folder with [0-2]: "
     read -r confirmation
     case "$confirmation" in
     "1")
         cp -r ../quick-webapp-generator/templates/react-redux-with-router/ client/
+        ;;
+    "2")
+        cp -r ../quick-webapp-generator/templates/react-redux-with-router-picnic/ client/
         ;;
     esac
 fi
