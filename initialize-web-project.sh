@@ -10,7 +10,10 @@ while [[ $project_name = '' ]]; do
     read project_name
 done
 
-PROJECT_PATH=../$project_name
+# Starting from the parent folder
+GENERATOR_PATH=$(pwd)
+cd ..
+PROJECT_PATH=$(pwd)/$project_name
 while [[ -d $PROJECT_PATH ]]; do
     printf "Sorry. There already exists a project with the same name. Try again!\n"
     printf "Name of project: "
@@ -24,6 +27,12 @@ printf "Initialize empty git repository [y/n]: "
 read -r confirmation
 if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
     git init
+fi
+
+printf "Initialize basic gitignore [y/n]: "
+read -r confirmation
+if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
+    cp $GENERATOR_PATH/templates/.gitignore-template $PROJECT_PATH/.gitignore
 fi
 
 printf "Hooray, it's now time to choose from your favorite npm packages!\n"
@@ -82,7 +91,7 @@ printf "Ok, interesting choices...\n"
 printf "Yo, do you want to setup a client folder [y/n]: "
 read -r confirmation
 if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
-    mkdir client
+    mkdir $PROJECT_PATH/client
     printf "Cool. This wizard has the following client templates \n"
     printf "
         0) Empty
@@ -92,10 +101,10 @@ if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = '
     read -r confirmation
     case "$confirmation" in
     "1")
-        cp -r ../node-app-generator/templates/react-redux-router/ client/
+        cp -r $GENERATOR_PATH/templates/react-redux-router/ $PROJECT_PATH/client/
         ;;
     "2")
-        cp -r ../node-app-generator/templates/react-redux-router-picnic/ client/
+        cp -r $GENERATOR_PATH/templates/react-redux-router-picnic/ $PROJECT_PATH/client/
         ;;
     esac
 fi
@@ -106,7 +115,7 @@ do
     npm install $package
 done
 
-if [ $? = 0 ]; then
+if [[ $? = 0 ]]; then
     printf "Your project was setup successfully. Go change the world with it!\n"
 else
     printf "Something went wrong with the setup. Don't worry, you can still do great things after you debug...\n"
