@@ -92,10 +92,10 @@ if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = '
     read -r confirmation
     case "$confirmation" in
     "1")
-        cp -r ../quick-webapp-generator/templates/react-redux-router/ client/
+        cp -r ../node-app-generator/templates/react-redux-router/ client/
         ;;
     "2")
-        cp -r ../quick-webapp-generator/templates/react-redux-router-picnic/ client/
+        cp -r ../node-app-generator/templates/react-redux-router-picnic/ client/
         ;;
     esac
 fi
