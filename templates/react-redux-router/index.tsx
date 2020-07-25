@@ -1,5 +1,5 @@
 /**
- * Entry point to setting app your app.
+ * Entry point to setting up your app.
  * This file includes setting up your redux store with the initial state, and connecting it to the React App.
  */
 import App from './components/App';
