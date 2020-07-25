@@ -81,6 +81,18 @@ if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = '
     packages_to_install+=('sass')
 fi
 
+printf "Install Paper [y/n]: "
+read -r confirmation
+if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
+    packages_to_install+=('paper')
+fi
+
+printf "Install Paper Types [y/n]: "
+read -r confirmation
+if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
+    packages_to_install+=('@types/paper')
+fi
+
 printf "Install Express [y/n]: "
 read -r confirmation
 if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = 'Y' ]]; then
@@ -96,7 +108,8 @@ if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = '
     printf "
         0) Empty
         1) React + Redux + React Router in Typescript
-        2) React + Redux + React Router in Typescript\n\n"
+        2) React + Redux + React Router in Typescript
+        3) Paper.js One page app in Typescript\n\n"
     printf "Pick the boilerplate template you want to setup your client folder with [0-2]: "
     read -r confirmation
     case "$confirmation" in
@@ -105,6 +118,9 @@ if [[ $confirmation = '' ]] || [[ $confirmation = 'y' ]] || [[ $confirmation = '
         ;;
     "2")
         cp -r $GENERATOR_PATH/templates/react-redux-router-picnic/ $PROJECT_PATH/client/
+        ;;
+    "3")
+        cp -r $GENERATOR_PATH/templates/paperjs-single-page/ $PROJECT_PATH/client/
         ;;
     esac
 fi
